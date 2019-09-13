@@ -6,6 +6,10 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Accelerometer.cs" t="Include" />
+          <e p="CameraController.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="GyroFollow.cs" t="Include" />
+          <e p="GyroManager.cs" t="Include" />
         </e>
       </e>
       <e p="Game.sln" t="IncludeFlat" />
