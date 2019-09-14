@@ -17,13 +17,13 @@ public class Accelerometer : MonoBehaviour
     void Update()
     {
         Vector3 tilt = Input.acceleration;
-
+        
         if (isFlat)
         {
             tilt = Quaternion.Euler(90, 0, 0) * tilt;
         }
 
-// Adds force to rigidbody dependent on acceleration
+        // Adds force to rigidbody dependent on acceleration
         _rigidbody.AddForce(tilt);
     }
 }

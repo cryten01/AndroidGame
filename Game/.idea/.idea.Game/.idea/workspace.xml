@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb0ffb82-a6a3-4402-b64e-52a655a9251c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Accelerometer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Accelerometer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GyroFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GyroFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GyroManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GyroManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,86 +17,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Accelerometer.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-              <folding>
-                <marker date="1568381093762" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568381093762" expanded="true" signature="122:619" ph="{...}" />
-                <marker date="1568381093762" expanded="true" signature="260:320" ph="{...}" />
-                <marker date="1568381093762" expanded="true" signature="378:617" ph="{...}" />
-                <marker date="1568381093762" expanded="true" signature="448:522" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-              <folding>
-                <marker date="1568379417878" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568379417878" expanded="true" signature="120:285" ph="{...}" />
-                <marker date="1568379417878" expanded="true" signature="192:204" ph="{...}" />
-                <marker date="1568379417878" expanded="true" signature="262:283" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GyroManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="442">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
-                <marker date="1568377981490" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568377981490" expanded="true" signature="120:1368" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="203:655" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="221:587" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="265:547" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="378:533" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="599:649" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="783:1130" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="813:853" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="896:1028" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="1041:1124" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="1157:1312" ph="{...}" />
-                <marker date="1568377981490" expanded="true" signature="1187:1306" ph="{...}" />
+                <marker date="1568460385315" expanded="false" signature="6:78" ph="..." />
+                <marker date="1568460385315" expanded="true" signature="120:1331" ph="{...}" />
+                <marker date="1568460385315" expanded="false" signature="127:690" ph="Instance" />
+                <marker date="1568460385315" expanded="true" signature="223:675" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="241:607" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="285:567" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="398:553" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="619:669" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="813:1160" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="843:883" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="926:1058" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="1071:1154" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="1187:1283" ph="{...}" />
+                <marker date="1568460385315" expanded="true" signature="1217:1277" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GyroFollow.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="304">
+              <caret line="22" column="76" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
               <folding>
-                <marker date="1568380224636" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568380224636" expanded="true" signature="119:416" ph="{...}" />
-                <marker date="1568380224636" expanded="true" signature="191:246" ph="{...}" />
-                <marker date="1568380224636" expanded="true" signature="304:414" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
-              <folding>
-                <marker date="1568380746145" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568380746145" expanded="true" signature="125:483" ph="{...}" />
-                <marker date="1568380746145" expanded="true" signature="265:342" ph="{...}" />
-                <marker date="1568380746145" expanded="true" signature="404:481" ph="{...}" />
+                <marker date="1568462585070" expanded="false" signature="6:101" ph="..." />
+                <marker date="1568462585070" expanded="true" signature="142:660" ph="{...}" />
+                <marker date="1568462585070" expanded="true" signature="281:336" ph="{...}" />
+                <marker date="1568462585070" expanded="true" signature="394:658" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -115,11 +72,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/GyroManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GyroFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Accelerometer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GyroManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GyroFollow.cs" />
       </list>
     </option>
   </component>
@@ -190,12 +147,12 @@
       <option name="presentableId" value="Default" />
       <updated>1568362681304</updated>
       <workItem from="1568362688176" duration="254000" />
-      <workItem from="1568363130170" duration="4458000" />
+      <workItem from="1568363130170" duration="12108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4712000" />
+    <option name="totallyTimeSpent" value="12362000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -254,6 +211,20 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Accelerometer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding>
+            <marker date="1568449340733" expanded="false" signature="6:78" ph="..." />
+            <marker date="1568449340733" expanded="true" signature="122:635" ph="{...}" />
+            <marker date="1568449340733" expanded="true" signature="260:320" ph="{...}" />
+            <marker date="1568449340733" expanded="true" signature="378:633" ph="{...}" />
+            <marker date="1568449340733" expanded="true" signature="456:530" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -263,41 +234,6 @@
             <marker date="1568379417878" expanded="true" signature="120:285" ph="{...}" />
             <marker date="1568379417878" expanded="true" signature="192:204" ph="{...}" />
             <marker date="1568379417878" expanded="true" signature="262:283" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GyroManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <marker date="1568377981490" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568377981490" expanded="true" signature="120:1368" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="203:655" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="221:587" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="265:547" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="378:533" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="599:649" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="783:1130" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="813:853" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="896:1028" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="1041:1124" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="1157:1312" ph="{...}" />
-            <marker date="1568377981490" expanded="true" signature="1187:1306" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GyroFollow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <marker date="1568380224636" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568380224636" expanded="true" signature="119:416" ph="{...}" />
-            <marker date="1568380224636" expanded="true" signature="191:246" ph="{...}" />
-            <marker date="1568380224636" expanded="true" signature="304:414" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -315,16 +251,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Accelerometer.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GyroManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        <state relative-caret-position="442">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
-            <marker date="1568381093762" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568381093762" expanded="true" signature="122:619" ph="{...}" />
-            <marker date="1568381093762" expanded="true" signature="260:320" ph="{...}" />
-            <marker date="1568381093762" expanded="true" signature="378:617" ph="{...}" />
-            <marker date="1568381093762" expanded="true" signature="448:522" ph="{...}" />
+            <marker date="1568460385315" expanded="false" signature="6:78" ph="..." />
+            <marker date="1568460385315" expanded="true" signature="120:1331" ph="{...}" />
+            <marker date="1568460385315" expanded="false" signature="127:690" ph="Instance" />
+            <marker date="1568460385315" expanded="true" signature="223:675" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="241:607" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="285:567" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="398:553" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="619:669" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="813:1160" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="843:883" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="926:1058" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="1071:1154" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="1187:1283" ph="{...}" />
+            <marker date="1568460385315" expanded="true" signature="1217:1277" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GyroFollow.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="22" column="76" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
+          <folding>
+            <marker date="1568462585070" expanded="false" signature="6:101" ph="..." />
+            <marker date="1568462585070" expanded="true" signature="142:660" ph="{...}" />
+            <marker date="1568462585070" expanded="true" signature="281:336" ph="{...}" />
+            <marker date="1568462585070" expanded="true" signature="394:658" ph="{...}" />
           </folding>
         </state>
       </provider>

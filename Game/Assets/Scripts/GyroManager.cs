@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GyroManager : MonoBehaviour
 {
+    #region Instance
     private static GyroManager instance;
-
     public static GyroManager Instance
     {
         get
@@ -27,10 +27,10 @@ public class GyroManager : MonoBehaviour
             instance = value;
         }
     }
-
+    #endregion
 
     private Gyroscope _gyro;
-    private Quaternion _gyroRotation;
+    private Quaternion _rotation;
     private bool gyroActive;
 
     public void enableGyro()
@@ -56,10 +56,9 @@ public class GyroManager : MonoBehaviour
     {
         if (gyroActive)
         {
-            _gyroRotation = _gyro.attitude;
-//            Debug.Log("Rotation: " + _gyroRotation);
+            _rotation = _gyro.attitude;
         }
     }
 
-    public Quaternion GyroRotation => _gyroRotation;
+    public Quaternion Rotation => _rotation;
 }
