@@ -36,7 +36,7 @@ public class Accelerometer : MonoBehaviour
     {
         // Filters acceleration values for smoother movements
         // y change need because device is held flat
-        lowPassFilter(Input.acceleration.x, Input.acceleration.y, 0.1f);
+        lowPassFilter(Input.acceleration.x, Input.acceleration.y, 0.2f);
 
         // Debug: diplays current xFilt and yFilt on UI
         accValues.text = "x: " + xFilt + " z: " + yFilt;
@@ -54,7 +54,7 @@ public class Accelerometer : MonoBehaviour
             _rigidbody.AddForce(Input.acceleration.x * moveSpeed, 0, Input.acceleration.y * moveSpeed);
         }
         
-        lerpTest(gameObject);
+        lerpTest(platform);
     }
 
 

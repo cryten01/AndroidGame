@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool ballMode = false;
-    public GameObject activeObject;
+    public GameObject lastActiveGO;// currently controlled gameObject
 
     public Material activeMaterial;
     public Material environmentMaterial;
@@ -22,33 +22,24 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        changeMaterial( GameObject.Find("Platform"));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    public void controlObjectTest()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (ballMode)
         {
-            GameObject.Find("PlayerBall").GetComponent<MeshRenderer>().material = activeMaterial;
-            GameObject.Find("Boundary S").GetComponent<MeshRenderer>().material = environmentMaterial;
-            
+            lastActiveGO = GameObject.Find("Platform");
+            setActiveMaterial(GameObject.Find("Player"));
         }
         else
         {
-            GameObject.Find("PlayerBall").GetComponent<MeshRenderer>().material = environmentMaterial;
-            GameObject.Find("Boundary S").GetComponent<MeshRenderer>().material = activeMaterial;
+            lastActiveGO = GameObject.Find("Player");
+            setActiveMaterial(GameObject.Find("Platform"));
         }
+
+
     }
 
     // Changes the material of the gameobject
-    public void changeMaterial(GameObject target)
+    public void setActiveMaterial(GameObject target)
     {
-        activeObject.GetComponent<Renderer>().material = environmentMaterial;
+        lastActiveGO.GetComponent<Renderer>().material = environmentMaterial;
         
         // Gets transforms of all childs   
         Transform[] children = target.GetComponentsInChildren<Transform>();
