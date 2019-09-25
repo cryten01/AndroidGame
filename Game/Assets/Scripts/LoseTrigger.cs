@@ -18,13 +18,13 @@ public class LoseTrigger : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            isColliding = false;
-            Debug.Log("Player falls from Plattform");
-            GameManager.GameOver();
-            MainCamera.canFollow = false;
-        }
+//        if (other.CompareTag("Player"))
+//        {
+//            isColliding = false;
+//            Debug.Log("Player falls from Platform");
+//            GameManager.GameOver();
+//            MainCamera.canFollow = false;
+//        }
     }
     
 //    private void OnTriggerStay(Collider other)
@@ -43,10 +43,11 @@ public class LoseTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-//        if (other.CompareTag("Player"))
-//        {
-//            isColliding = true;
-//            countdown = 0;
-//        }
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player has fallen from Platform");
+            GameManager.GameOver();
+            MainCamera.canFollow = false;
+        }
     }
 }
