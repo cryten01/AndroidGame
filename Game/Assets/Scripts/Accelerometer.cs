@@ -51,17 +51,20 @@ public class Accelerometer : MonoBehaviour
         {
             _rigidbody.AddForce(Input.acceleration.x * moveSpeed, 0, Input.acceleration.y * moveSpeed);
         }
+        
+        lerpTest(gameObject);
     }
 
 
     private void lerpTest(GameObject target)
     {
         Vector3 posA = new Vector3(0, 0, 0);
-        Vector3 posB = new Vector3(0, -4, 0);
+        Vector3 posB = new Vector3(0, 4, 0);
 
         if (Input.GetKeyDown(KeyCode.I))
         {
             newPosition = posA;
+            Debug.Log("I Pressed");
         }
 
         if (Input.GetKeyDown(KeyCode.O))
