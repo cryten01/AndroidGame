@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Accelerometer : MonoBehaviour
 {
-    // External game objects
+    // References
+    private GameManager GameManager;
     public GameObject platform;
     public TextMeshProUGUI accValues;
     
     // Public params
-    public bool platformMode = true;
     public float moveSpeed = 50;
     
     // Filtered values of the accelerometer
@@ -26,6 +26,8 @@ public class Accelerometer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager = FindObjectOfType<GameManager>();
+        
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -42,7 +44,7 @@ public class Accelerometer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (platformMode)
+        if (!GameManager.ballMode)
         {
             platform.transform.localRotation = Quaternion.Euler(yFilt * moveSpeed, 0, -xFilt * moveSpeed);
 //            Quaternion.Lerp(platform.transform.localRotation, Quaternion.Euler(yFilt, 0, -xFilt), Time.deltaTime);
