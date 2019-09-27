@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public bool ballMode = false;
-    public GameObject lastActiveGO;// currently controlled gameObject
-
+    public GameObject LastGO;// currently controlled gameObject
+    public GameObject ActiveGO;
+    
     public Material activeMaterial;
     public Material environmentMaterial;
+    public Button ballModeButton;
 
     public TextMeshProUGUI WinText;
     public TextMeshProUGUI LoseText;
@@ -22,34 +25,54 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        updateActiveGO();
+    }
+    
+    // Switches between game mode between player and platform
+    public void switchBallMode()
+    {
+        ballMode = !ballMode;
+        Debug.Log("Ballmode: " + ballMode);
+    }
+
+    // Updates activeGO
+    public void updateActiveGO()
+    {        
         if (ballMode)
         {
-            lastActiveGO = GameObject.Find("Platform");
-            setActiveMaterial(GameObject.Find("Player"));
+            LastGO = GameObject.Find("Platform");
+            ActiveGO = GameObject.Find("Player");
+            ballModeButton.GetComponentInChildren<Text>().text = "Switch to platform";
         }
         else
         {
-            lastActiveGO = GameObject.Find("Player");
-            setActiveMaterial(GameObject.Find("Platform"));
+            LastGO = GameObject.Find("Player");
+            ActiveGO = GameObject.Find("Platform");
+            ballModeButton.GetComponentInChildren<Text>().text = "Switch to ball";
         }
-
-
+        
+        // Resets lastGO material to environmentMaterial
+        setGOMaterial(LastGO, environmentMaterial);
+        
+        // Sets activeGO material to activeMaterial
+        setGOMaterial(ActiveGO, activeMaterial);
     }
 
-    // Changes the material of the gameobject
-    public void setActiveMaterial(GameObject target)
+    // Changes the material of the gameobject and all of its children
+    public void setGOMaterial(GameObject target, Material material)
     {
-        lastActiveGO.GetComponent<Renderer>().material = environmentMaterial;
-        
-        // Gets transforms of all childs   
+        target.GetComponent<Renderer>().material = material;
+       
+        // Gets all child transforms from activeGO 
         Transform[] children = target.GetComponentsInChildren<Transform>();
 
         foreach (Transform t in children)
         {
+            // Checks if transform is part of activeGO
             if (t.CompareTag("Environment"))
             {
                 Renderer rend = t.GetComponent<Renderer>();
-                rend.material = activeMaterial;
+                rend.material = material;
             }
         }
     }
