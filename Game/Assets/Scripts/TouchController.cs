@@ -19,13 +19,21 @@ public class TouchController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0 && !block)
+        if (Input.touchCount > 0)
         {
-            block = true;
-            TouchCounts.text = "Touch Counts: " + Input.touchCount;
+            // Gets the first recognized touch
+            Touch touch = Input.GetTouch(0);
+            
+            Debug.Log("Touch pos on screen: x " + touch.position.x + " y " + touch.position.y);
+            
+            // Checks if touch is outside the UI area and not blocked
+            if (touch.position.x > 350 && touch.position.y > 350 && !block)
+            {
+                block = true;
+                TouchCounts.text = "Touch Counts: " + Input.touchCount;
 //            target.transform.position = Vector3.Lerp(target.transform.position, new Vector3(0, 4, 0), Time.deltaTime);
-            StartCoroutine(jump());
-
+                StartCoroutine(jump());
+            }
         }
     }
 
