@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        updateActiveGO();
+//        updateActiveGO();
     }
     
     // Switches between game mode between player and platform

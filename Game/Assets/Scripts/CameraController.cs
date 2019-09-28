@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,26 +30,33 @@ public class CameraController : MonoBehaviour
         {
             if (GameManager.ballMode)
             {       
-                followCam();
+//                ballCam1();
             }
             else
             {
-//                staticCam();
+                ballCam2();
             }
         }
     }
 
-    private void followCam()
+    private void ballCam1()
     {
-        Debug.Log("Cam Ball mode");
+        Debug.Log("BallCam1 activated");
         // determines how much influence the player position has on each of the axis
         Vector3 temp = new Vector3(Player.transform.position.x * 0.3f, Player.transform.position.y * 0.6f,Player.transform.position.z * 0.3f);            
         transform.position = temp + offset;
     }
+    
+    private void ballCam2()
+    {
+        Debug.Log("BallCam2 activated");
+//        transform.position = Player.transform.position + offset;
+        transform.SetParent(Player.transform);
+    }
 
     private void staticCam()
     {
-        Debug.Log("Cam Platform mode");
+        Debug.Log("PlatforCam activated");
         transform.rotation = Platform.transform.localRotation * Quaternion.Euler(90.0f,0,0);
         transform.position = Platform.transform.position + Platform.transform.up * 12.0f + new Vector3(0,0);
     }

@@ -24,7 +24,7 @@ public class TouchController : MonoBehaviour
             // Gets the first recognized touch
             Touch touch = Input.GetTouch(0);
             
-            Debug.Log("Touch pos on screen: x " + touch.position.x + " y " + touch.position.y);
+//            Debug.Log("Touch pos on screen: x " + touch.position.x + " y " + touch.position.y);
             
             // Checks if touch is outside the UI area and not blocked
             if (touch.position.x > 350 && touch.position.y > 350 && !block)
@@ -40,7 +40,7 @@ public class TouchController : MonoBehaviour
     private IEnumerator jump()
     {
         Debug.Log("Player jumps");
-        target.GetComponent<Rigidbody>().AddForce(0, 200, 0);
+        target.GetComponent<Rigidbody>().AddForce(0, 10, 0, ForceMode.Impulse);
         yield return new WaitForSeconds(1.0f);
         block = false;
     }

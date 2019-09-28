@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class LoseTrigger : MonoBehaviour
 {
-    private GameManager GameManager;
     private bool isColliding = true;
     private float countdown = 0;
 
-    public CameraController MainCamera;
+    private CameraController MainCamera;
+    private GameManager GameManager;
     
     // Start is called before the first frame update
     void Start()
     {
+        MainCamera = FindObjectOfType<CameraController>();
         GameManager = FindObjectOfType<GameManager>();
     }
     
