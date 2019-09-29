@@ -5,17 +5,9 @@ using UnityEngine;
 
 public class TouchController : MonoBehaviour
 {
-    public TextMeshProUGUI TouchCounts;
-    public GameObject target;
-    
+    // Blocks touch input
     private bool block = false;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -23,16 +15,14 @@ public class TouchController : MonoBehaviour
         {
             // Gets the first recognized touch
             Touch touch = Input.GetTouch(0);
-            
+
 //            Debug.Log("Touch pos on screen: x " + touch.position.x + " y " + touch.position.y);
-            
+
             // Checks if touch is outside the UI area and not blocked
             if (touch.position.x > 350 && touch.position.y > 350 && !block)
             {
-                block = true;
-                TouchCounts.text = "Touch Counts: " + Input.touchCount;
-//            target.transform.position = Vector3.Lerp(target.transform.position, new Vector3(0, 4, 0), Time.deltaTime);
-                StartCoroutine(jump());
+//                block = true;
+//                StartCoroutine(jump());
             }
         }
     }
@@ -40,8 +30,23 @@ public class TouchController : MonoBehaviour
     private IEnumerator jump()
     {
         Debug.Log("Player jumps");
-        target.GetComponent<Rigidbody>().AddForce(0, 10, 0, ForceMode.Impulse);
+
+        GetComponent<Rigidbody>().AddForce(0, 10, 0, ForceMode.Impulse);
+
         yield return new WaitForSeconds(1.0f);
+
         block = false;
+    }
+
+    private void strafe(Touch touch)
+    {
+        if (touch.position.x <= 2280 / 2 && touch.position.y <= 1080 / 2)
+        {
+            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-1.2f, 0, 0);
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(1.2f, 0, 0);
+        }
     }
 }

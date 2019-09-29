@@ -20,21 +20,22 @@ public class WinTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isColliding = true;
+            GameManager.CompleteLevel();
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (isColliding)
-        {
-            countdown += Time.deltaTime;
-            Debug.Log("Countdown " + countdown);
-
-            if (countdown > 2.0f)
-            {
-                GameManager.CompleteLevel();
-            }
-        }
+//        if (isColliding)
+//        {
+//            countdown += Time.deltaTime;
+//            Debug.Log("Countdown " + countdown);
+//
+//            if (countdown > 2.0f)
+//            {
+//                GameManager.CompleteLevel();
+//            }
+//        }
     }
 
     private void OnTriggerExit(Collider other)

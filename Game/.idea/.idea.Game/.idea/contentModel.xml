@@ -20,7 +20,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Accelerometer.cs" t="Include" />
-          <e p="AccTest.cs" t="Include" />
+          <e p="Accelerometer2.cs" t="Include" />
           <e p="CameraController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GyroFollow.cs" t="Include" />
@@ -29,6 +29,7 @@
           <e p="TileManager.cs" t="Include" />
           <e p="TileTrigger.cs" t="Include" />
           <e p="TouchController.cs" t="Include" />
+          <e p="UIManager.cs" t="Include" />
           <e p="WinTrigger.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">

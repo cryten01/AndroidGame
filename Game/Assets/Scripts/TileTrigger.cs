@@ -7,7 +7,7 @@ public class TileTrigger : MonoBehaviour
     private TileManager tileManager;
     private void Start()
     {
-        tileManager = GameObject.FindObjectOfType<TileManager>();
+        tileManager = FindObjectOfType<TileManager>();
     }
 
     private void OnTriggerExit(Collider other)
@@ -17,7 +17,6 @@ public class TileTrigger : MonoBehaviour
             Debug.Log("Player exited tile");
             tileManager.SpawnTile();
             tileManager.DeleteTile();
-            tileManager.ChangeActiveTile();
         }
     }
 }

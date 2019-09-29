@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
+    // External References
+    public Material activeMaterial;
+    public Material environmentMaterial;
+    
     // Params
     public GameObject[] tiletypes;
     public int numberOfActiveTiles = 10;
     public int activeTileNumber = 1;
 
-    // External References
-    public Material activeMaterial;
-    public Material environmentMaterial;
-    public AccTest accelerationData;
 
     private Vector3 spawnPoint;
     private List<GameObject> activeTiles;
@@ -22,12 +21,12 @@ public class TileManager : MonoBehaviour
     // Testing only
     private int tileCount = 0;
 
+    
     // Start is called before the first frame update
     void Start()
     {
-        spawnPoint = new Vector3(0, 0, 0);
-
         activeTiles = new List<GameObject>();
+        spawnPoint = new Vector3(0, 0, 0);
 
         // Creates the first tiles
         for (int i = 0; i < numberOfActiveTiles - 1; i++)
@@ -39,41 +38,52 @@ public class TileManager : MonoBehaviour
         activeTile = activeTiles[activeTileNumber];
     }
 
+    
     private void Update()
     {
-//        activeTile.transform.localRotation = Quaternion.Euler(0, 0, -accelerationData.xFilt * 100);
+//          activeTile.transform.localRotation = Quaternion.Euler(0, 0, -accelerationData.xFilt * 100);
 //          activeTile.transform.position += new Vector3(-accelerationData.xFilt * 1,0, 0);
     }
 
+    
     public void SpawnTile()
     {
-        GameObject tile;
-        
-        tile = Instantiate(tiletypes[0]);
-        
-        tile.name = "Tile";
+        if (tileCount < 21)
+        {
+            GameObject tile;
 
-        // Adds to the active tiles
-        activeTiles.Add(tile);
+            if (tileCount < 20)
+            {
+                tile = Instantiate(tiletypes[0]);
+            }
+            else
+            {
+                tile = Instantiate(tiletypes[1]);
+            }
 
-        // Puts it into the TileManager
-        tile.transform.SetParent(transform);
+            // Puts it into the TileManager
+            tile.transform.SetParent(transform);
 
-        // Moves it the spawnPoint
-        tile.transform.position = spawnPoint;
-        
+            // Adds to the active tiles
+            activeTiles.Add(tile);
+
+            // Updates tileCount
+            tileCount++;
+
+            // Moves it the spawnPoint
+            tile.transform.position = spawnPoint;
+
+            // Updates spawnPoint
+            spawnPoint.z += tiletypes[0].transform.localScale.z;
+        }
+
         // Sets a random rotation
         if (tileCount > 20)
         {
-            tile.transform.localRotation = Quaternion.Euler(tile.transform.localRotation.x, tile.transform.localRotation.y, Random.Range(-20.0f, 20.0f));
+//            tile.transform.localRotation = Quaternion.Euler(tile.transform.localRotation.x, tile.transform.localRotation.y, Random.Range(-20.0f, 20.0f));
         }
-
-        // Updates spawnPoint
-        spawnPoint.z += tiletypes[0].transform.localScale.z;
-
-        // Updates tileCount
-        tileCount++;
     }
+
 
     public void DeleteTile()
     {
@@ -88,6 +98,7 @@ public class TileManager : MonoBehaviour
         }
     }
 
+
     public void ChangeActiveTile()
     {
         // Resets lastActiveTile material
@@ -99,6 +110,7 @@ public class TileManager : MonoBehaviour
         // Changes material of new active tile
         SetTileMaterial(activeTile, activeMaterial);
     }
+
 
     // Changes the material of the tile and its children
     public void SetTileMaterial(GameObject target, Material material)
