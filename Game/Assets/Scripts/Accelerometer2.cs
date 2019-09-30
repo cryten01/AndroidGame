@@ -17,6 +17,7 @@ public class Accelerometer2 : MonoBehaviour
 
     // Public params
     public float moveSpeed = 50;
+    public GameObject BallContainer;
     
     // Filtered values of the accelerometer
     public float xFilt = 0.0f;
@@ -37,10 +38,11 @@ public class Accelerometer2 : MonoBehaviour
     {
         // Filters acceleration values for smoother movements
         lowPassFilter(Input.acceleration.x, Input.acceleration.y, Input.acceleration.z, 0.2f);
+    }
 
-        // Moves player ball
-        moveBall();
-//        moveCam();
+    private void FixedUpdate()
+    {
+//        rigidbody.AddForce(xFilt,0,0);
     }
 
     private void lowPassFilter(float accX, float accY, float accZ, float alpha)
@@ -52,8 +54,8 @@ public class Accelerometer2 : MonoBehaviour
 
     private void moveBall()
     {
-        transform.localRotation *= Quaternion.Euler(0.0f, Mathf.Clamp(xFilt * 1.0f, -2, 2), 0.0f);
-        transform.position += transform.forward * 20.0f * Time.deltaTime;
+        transform.localRotation *= Quaternion.Euler(0.0f, xFilt * 10.0f, 0.0f);
+        transform.position += transform.forward * 50.0f * Time.deltaTime;
     }
 
     private void moveCam()

@@ -51,8 +51,9 @@ public class CameraController : MonoBehaviour
     private void ballCam2()
     {
         Debug.Log("BallCam2 activated");
-        transform.transform.position = Player.transform.position + offsetToBall;
-//        transform.SetParent(Player.transform);
+        transform.position = Player.transform.position + offsetToBall;
+//        transform.localRotation = Player.transform.localRotation * Quaternion.Euler(20,0,0);
+//        transform.position = Player.transform.position + Player.transform.forward * -5.0f + new Vector3(0,3,0);
     }
 
     private void staticCam()

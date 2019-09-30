@@ -26,6 +26,7 @@
           <e p="GyroFollow.cs" t="Include" />
           <e p="GyroManager.cs" t="Include" />
           <e p="LoseTrigger.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
           <e p="TileManager.cs" t="Include" />
           <e p="TileTrigger.cs" t="Include" />
           <e p="TouchController.cs" t="Include" />

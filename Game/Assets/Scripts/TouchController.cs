@@ -26,6 +26,30 @@ public class TouchController : MonoBehaviour
             }
         }
     }
+    
+
+    private void FixedUpdate()
+    {
+        if (Input.touchCount > 0)
+        {
+            // Gets the first recognized touch
+            Touch touch = Input.GetTouch(0);
+            
+            Rigidbody rb = GetComponent<Rigidbody>();
+            
+            
+
+            
+            if (touch.position.x <= 2280 / 2 && touch.position.y <= 1080 / 2)
+            {
+//                rb.AddForce(new Vector3(0,0,10));
+            }
+            else
+            {
+//                rb.velocity = new Vector3(0,0,0);
+            }
+        }
+    }
 
     private IEnumerator jump()
     {

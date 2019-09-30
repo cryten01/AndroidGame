@@ -48,11 +48,11 @@ public class TileManager : MonoBehaviour
     
     public void SpawnTile()
     {
-        if (tileCount < 21)
+        if (tileCount < 41)
         {
             GameObject tile;
 
-            if (tileCount < 20)
+            if (tileCount < 40)
             {
                 tile = Instantiate(tiletypes[0]);
             }
